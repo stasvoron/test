@@ -4,23 +4,25 @@ def bible(a):
     if a == 'выход':
         exit()
     if a == 'меню':
-        return True        
+        return True
+            
     reader = csv.reader(open("data.csv", "rb",),delimiter=';')
     name = 'По заданому запросу иформации не найдено'
     for x in reader:
         if len(x) == 3 and a == x[2]:
             name = x[0], x[1]
         elif len(x) == 3 and a == x[0]:
-            name =  x[2]
+            name = x[2]
+            
     print ' '.join(name) 
-
 
 
 def writer(b):
     if b == 'выход':
         exit()
     if b == 'меню':
-        return True        
+        return True
+          
     writer = csv.writer(open('data.csv', 'a'), delimiter=';').writerow(b.split())
        
 
@@ -35,4 +37,5 @@ def vibor():
             pass
     else:
         exit()
-vibor()
+while True:
+    vibor()
